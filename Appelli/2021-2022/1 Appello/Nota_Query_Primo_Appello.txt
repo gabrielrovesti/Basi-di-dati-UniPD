@@ -1,0 +1,5 @@
+Nota: Nella query C dell'esercizio 3 del primo appello, 
+manca la seguente riga nel WHERE:
+"AND R.PERCENTUALE=T.TOP"
+
+É infatti nascosta, ma è presente evidenziando col mouse sotto al riquadro.
