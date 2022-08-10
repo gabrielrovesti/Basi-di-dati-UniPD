@@ -1,0 +1,9 @@
+Siti utili generazione dati:
+
+https://github.com/faker-js/faker
+https://www.mockaroo.com/
+https://generatedata.com/
+https://github.com/rapiddweller/rapiddweller-benerator-ce
+
+Oppure ci si crea uno script (anche tramite Faker) di generazione dati tramite il proprio
+linguaggio preferito.
