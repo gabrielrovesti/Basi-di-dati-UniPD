@@ -1,0 +1,7 @@
+Nota:
+le credenziali di laboratorio sono disponibili al link:
+https://www.studenti.math.unipd.it/account/delivery/
+
+Cliccando su "Ritiro account personale" e successivamente
+su "Database Postgresql per corso Basi Dati", si ottiene la password per
+usare Postgre nei laboratori e collegarsi direttamente
