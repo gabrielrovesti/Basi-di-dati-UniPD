@@ -1,0 +1,48 @@
+Query SQL - Operazioni tipiche 
+
+SELECT giornata.data_effettiva, concerto.artista, concerto.ora_inizio, concerto.ora_fine, concerto.palcoscenico
+FROM giornata,concerto
+WHERE giornata.festival = 'Fog Festival 2020' AND concerto.giornata = giornata.data_effettiva
+ORDER BY giornata.data_effettiva, concerto.ora_inizio;
+
+
+
+SELECT giornata.data_effettiva AS giornata, COUNT(*) AS numero_biglietti
+FROM partecipazione, acquisto_biglietto, giornata
+WHERE giornata.festival = 'Fog Festival 2020'
+AND giornata.data_effettiva = partecipazione.giornata
+AND partecipazione.acquisto = acquisto_biglietto.acquisto
+GROUP BY giornata.data_effettiva ORDER BY giornata.data_effettiva;
+
+
+
+SELECT biglietto.festival, COUNT(*) AS biglietti
+FROM acquisto_biglietto,biglietto
+WHERE acquisto_biglietto.biglietto = biglietto.id
+GROUP BY biglietto.festival
+ORDER BY COUNT(*) DESC;
+
+
+SELECT camerino.id, camerino_servizio.servizio
+FROM camerino, camerino_servizio
+WHERE camerino.id = camerino_servizio.camerino
+ORDER BY camerino.id
+
+
+SELECT giornata.festival,giornata.data_effettiva, concerto.artista, concerto.ora_inizio, concerto.ora_fine
+FROM concerto, giornata
+WHERE concerto.giornata = giornata.data_effettiva
+ORDER BY (giornata.festival,giornata.data_effettiva,concerto.ora_inizio);
+
+
+
+SELECT camerino, artista
+FROM occupazione
+WHERE giornata = '2020-06-15';
+
+
+
+UPDATE occupazione SET artista='Yellow Floyd'
+WHERE giornata='2020-06-16' AND camerino='CAM03';
+
+

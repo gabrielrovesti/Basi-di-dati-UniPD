@@ -1,0 +1,56 @@
+Schedule:
+1. r1(x), w1(x), r2(z), r1(y), w1(y), r2(x), w2(x), w2(z) 
+CSR e VSR.
+L'ordine delle transazioni, banalmente, è proprio T1-T2.
+
+2. r1(x), w1(x), w3(x), r2(y), r3(y), w3(y), w1(y), r2(x) 
+Non CSR e quindi non VSR.
+Sussiste, nel disegno del grafo dei conflitti, un doppio ciclo
+tra T1 e T3 e pure tra T2 e T3.
+Infatti, per quanto riguarda le scritture finali,
+noteremmo che T3 viene prima di T1, con una leggi-da da parte di T3 su T1 per y.
+Altra leggi-da da parte di T1 su T3 per x e scritture finali su x diverse da quelle di y.
+Infatti, T1 scrive su x e T3 su y.
+In merito a T2 e T3, invece, abbiamo che T2 non scrive ma legge e basta.
+Abbiamo una leggi-da da parte di T2 su T3 per x e una leggi-da da parte di T3 su T2 per y,,
+generando quindi un ordine diverso e dunque ciclico.
+Per risolverlo, comunque:
+o spostiamo la transazione T3 alla fine oppure facciamo dei commit/abort della transazioni 
+T1/T2 per togliere le transazioni attive sul grafo.
+
+3. r1(x), r2(x), w2(x), r2(x), r4(z), w1(x), w3(y), w3(x), w1(y), w5(x), w1(z), w5(y), r5(z) 
+Non CSR e quindi non VSR.
+Abbiamo già un ciclo su T1 e T2, con una leggi-da da parte di T1 su T2 per x
+e una leggi-da da parte di T2 su T1 per x.
+Abbiamo, inoltre, un ciclo su T3 e T1, con una leggi-da da parte di T1 su T3 per x
+e un diverso ordine delle scritture finali per quanto riguarda x e y.
+
+4. r1(x), r3(y), w1(y), w4(x), w1(t), w5(x), r2(z), r3(z), w2(z), w5(z), r4(t), r5(t)
+CSR e VSR.
+L'ordine delle transazioni, grafo dei conflitti alla mano, risulta
+essere: T3-T1-T4-T2-T5.
+
+5. r1(x), r2(x), w2(x), r3(x), r4(z), w1(x), r3(y), r3(x), w1(y), w5(x), w1(z), r5(y), r5(z) 
+Non CSR e quindi non VSR.
+Abbiamo un ciclo tra T1,T2,T3.
+Infatti, T1 legge da T2 su x, T3 legge da T1 su x e su y.
+
+6. r1(x), r1(t), r3(z), r4(z), w2(z), r4(x), r3(x), w4(x), w4(y), w3(y), w1(y), w2(t)
+Decisamente non CSR e quindi non VSR.
+Sussiste infatti un ciclo tra T3 e T4, un ciclo tra T1 e T4 ed un ciclo tra T1,T2,T4.
+
+7. r2(x), r4(x), w4(x), r1(y), r4(z), w4(z), w3(y), w3(z), w1(t), w2(z), w2(t)
+Decisamente non CSR e quindi non VSR.
+Infatti, abbiamo un ciclo tra T2 e T4 e un ciclo tra T1-T2-T3 e anche tra T2-T3-T4.
+
+8. r1(x), r2(y), w1(y), r2(x), w2(x)
+Non CSR né VSR.
+Infatti, abbiamo un ciclo tra T1 e T2 dovuto a una leggi-da da parte di T2 su T1 per y
+e una leggi-da da parte di T1 su T2 per x.
+ 
+9. r1(x) r2(y) w1(x) w1(y) r2(x) w2(x)
+Vedi la (8).
+
+10. r1(x), r1(y), r2(y), w2(z), w1(z), w3(z), w3(x) 
+CSR e quindi VSR.
+Ordinabile, successivamente, come T2-T1-T3.
