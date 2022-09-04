@@ -1,5 +1,25 @@
-Nota: Nella query C dell'esercizio 3 del primo appello, 
+- Nella prima query, il prof indica (in un solo anno),
+ma il suggerimento è fuorviante.
+Intende infatti, che sia lo stesso candidato che si presenta
+più volte con il PD e quindi sottraggo a tutti i candidati che si sono presentati per il PD
+quelli che si sono presentati con altri partiti.
+Scrivendola bene, sarebbe "I candidati che hanno partecipato ad elezioni una volta 
+sola (quindi, per lo stesso partito) per il PD".
+Così, qualcosa si capisce.
+
+- Si dà per assunto che ogni query riguardi l'anno 2022 (così dall'esame,
+nonostante non sia logicamente specificato da nessuna parte)
+
+- Il suggerimento sulla seconda query è fuorviante;
+"Vengono quindi restituite coppie del tipo (PD,50) 
+ad indicare che i candidati del PD hanno ottenuto in media 50 voti."
+Leggendolo e vedendo lo schema, uno penserebbe a NumVoti;
+peccato, però, che riguardi Percentuale.
+Quindi, sarebbe (PD, 50%) il suggerimento corretto.
+
+- Nella query C dell'esercizio 3 del primo appello, 
 manca la seguente riga nel WHERE:
 "AND R.PERCENTUALE=T.TOP"
-
-É infatti nascosta, ma è presente evidenziando col mouse sotto al riquadro.
+É infatti nascosta, ma è presente evidenziando col mouse sotto al riquadro
+(bastava letteralmente espandere il riquadro col mouse scrivendo il Word 
+soluzione da parte del prof).

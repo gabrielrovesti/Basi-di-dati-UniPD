@@ -1,0 +1,10 @@
+A parte, sotto, passando con il mouse, si nota
+che sarebbe anche presente il pezzo sotto:
+
+SELECT DISTINCT COGNOME
+FROM IMPIEGATO I, CF-LAVORA-OVUNQUE 
+WHERE I.CF=C.CF
+
+Questa indicata si pone a completamento
+del ragionamento alternativo operato
+con la vista Lavora-Ovunque.

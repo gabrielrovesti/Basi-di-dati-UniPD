@@ -1,0 +1,5 @@
+Nota: la query del prof dovrebbe selezionare 'TipoAereo'
+
+SELECT TipoAereo
+FROM Num_Voli
+WHERE Numero = (SELECT MAX(Numero) FROM Num_Voli);
