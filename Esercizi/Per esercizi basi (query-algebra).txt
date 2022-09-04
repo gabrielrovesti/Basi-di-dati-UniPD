@@ -1,0 +1,13 @@
+SQL e Algebra
+--
+Simboli:		⋈	σ	ρ	π
+
+ER
+--
+Solo quelli che hanno soluzione (probabili Max)
+
+VSR - CSR - Warm restart
+
+Normalizzazione/3FN/BCNF
+
+Quiz (Indici/Relazioni)
